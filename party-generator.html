@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Generator</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<script>
+    const themes = [
+        'Princess',
+        'Cowboy',
+        'Alien',
+        'Disco',
+        'Ron',
+        'Pirate',
+        'Decades',
+        'Halloween',
+        'Prom',
+        'Redneck',
+        'Religion',
+        'Zombie',
+        'Superheros',
+        'Toga',
+        'Heaven and Hell',
+        'Christmas',
+        'Gangster',
+        'Medieval',
+        'Ancient Times',
+        'The Future',
+        '80s',
+        '90s',
+        'Celebrity',
+        'James Bond',
+        'Mermaid',
+        'Rave',
+        'Game of Thrones',
+        'Basic Bitch',
+        '7 Deadly Sins',
+        'Unicorn',
+        'Rodeo',
+        'Caveman',
+        'White Trash',
+        'Apocalypse',
+        'Construction Worker',
+        'Country Club',
+        'Holidays',
+        'Meme',
+        'Olympics',
+        'Historical Figure',
+        'Revolutionary War'
+    ];
+
+    function partyGenerator() {
+      const length = themes.length;
+      let indexes = [];
+      const el = document.getElementById('theme');
+
+      while(indexes.length < 2) {
+        var r = Math.floor(Math.random() * length);
+        if(indexes.indexOf(r) === -1) indexes.push(r);
+      }
+
+      let party = '<span class="text-indigo-600 font-extrabold text-2xl py-6 block">' + themes[indexes[0]] + ' <span class="text-indigo-800">' + themes[indexes[1]] + '</span></span> ';
+      
+      document.getElementById('theme').innerHTML=party;
+
+    }
+</script>
+<body>
+  <div class="bg-zinc-100 flex justify-center items-center h-screen">
+    <div class="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        <span class="block">What should our next party be?</span>
+      </h2>
+      <div class="mt-8 flex justify-center">
+        <div class="inline-flex rounded-md shadow mb-2">
+          <a onclick="partyGenerator()" href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Let's Find Out</a>
+        </div>
+      </div>
+      <div id="theme"></div>
+
+    </div>
+  </div>
+</body>
+</html>
