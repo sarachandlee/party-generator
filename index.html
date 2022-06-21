@@ -10,50 +10,51 @@
 </head>
 <script>
     const themes = [
-        'Princess',
-        'Cowboy',
-        'Alien',
+        ['Princess', 'princess.jpeg'],
+        ['Cowboy', 'cowboy.jpeg'],
+        ['Alien', 'alien.jpeg'],
         // 'Disco',
         // 'Ron',
         // 'Pirate',
-        'Decades',
-        'Halloween',
-        'Prom',
-        'Redneck',
-        'Religion',
-        'Zombie',
-        'Superheros',
-        'Toga',
-        'Heaven and Hell',
+        ['Decades', 'decades.jpeg'],
+        ['Halloween', 'halloween.jpeg'],
+        ['Prom', 'prom.jpeg'],
+        ['Redneck', 'redneck.jpeg'],
+        ['Religion', 'religon.jpeg'],
+        ['Zombie', 'zombie.jpeg'],
+        ['Superheros', 'superheros.jpeg'],
+        ['Toga', 'toga.jpeg'],
+        ['Heaven and Hell', 'heaven-and-hell.jpeg'],
         // 'Christmas',
-        'Gangster',
-        'Medieval',
-        'Ancient Times',
-        'The Future',
-        '80s',
-        '90s',
-        'Celebrity',
+        ['Gangster', 'gangster.jpeg'],
+        ['Medieval', 'medieval.jpeg'],
+        ['Ancient Times', 'ancient-times.jpeg'],
+        ['The Future', 'the-future.jpeg'],
+        ['80s', '80s.jpeg'],
+        ['90s', '90s.jpeg'],
+        ['Celebrity', 'celebrity.jpeg'],
         // 'James Bond',
-        'Mermaid',
-        'Rave',
-        'Game of Thrones',
-        'Basic Bitch',
-        '7 Deadly Sins',
-        'Unicorn',
-        'Rodeo',
-        'Caveman',
-        'White Trash',
-        'Apocalypse',
-        'Construction Worker',
-        'Country Club',
-        'Holidays',
-        'Meme',
-        'Olympics',
-        'Historical Figure',
-        'Revolutionary War',
-        'Anything but Human',
-        'Bros and Broettes',
-        'CEOs and Office Hoes'
+        ['Mermaid', 'mermaid.jpeg'],
+        ['Rave', 'rave.jpeg'],
+        ['Game of Thrones', 'game-of-thrones.jpeg'],
+        ['Basic Bitch', 'basic-bitch.jpeg'],
+        ['7 Deadly Sins', '7-deadly-sins.jpeg'],
+        ['Unicorn', 'unicorn.jpeg'],
+        ['Rodeo', 'rodeo.jpeg'],
+        ['Caveman', 'caveman.jpeg'],
+        ['White Trash', 'white-trash.jpeg'],
+        ['Apocalypse', 'apocalypse.jpeg'],
+        ['Construction Worker', 'construction-worker.jpeg'],
+        ['Country Club', 'country-club.jpeg'],
+        ['Holidays', 'holidays.jpeg'],
+        ['Meme', 'meme.jpeg'],
+        ['Olympics', 'olympics.jpeg'],
+        ['Historical Figure', 'historical-figure.jpg'],
+        ['Revolutionary War', 'Revolutionary-War.jpeg'],
+        ['Anything but Human', 'anything-but-human.jpeg'],
+        ['Bros and Broettes', 'bros.jpeg'],
+        ['CEOs and Office Hoes', 'ceos.jpeg'],
+        ['Vikings', 'vikings.png']
         
     ];
 
@@ -67,14 +68,23 @@
         if(indexes.indexOf(r) === -1) indexes.push(r);
       }
 
-      let party = '<span class="text-indigo-600 font-extrabold text-2xl py-6 block">' + themes[indexes[0]] + ' <span class="text-indigo-800">' + themes[indexes[1]] + '</span></span> ';
-      
+      let party = '<span class="text-indigo-600 font-extrabold text-2xl py-6 block">' 
+                  + themes[indexes[0]][0] + 
+                  ' <span class="text-indigo-800">' 
+                  + themes[indexes[1]][0] 
+                  + '</span></span> '
+                  + '<div class="md:flex md:max-w-2xl md:mx-auto md:justify-center md:items-start">'
+                  + '<img src="images/'+ themes[indexes[0]][1] +'"/>'
+                  + '<img src="images/'+ themes[indexes[1]][1] +'"/>'
+                  + '</div>'
+                  ;
+
       document.getElementById('theme').innerHTML=party;
 
     }
 </script>
-<body>
-  <div class="bg-zinc-100 flex justify-center items-center h-screen">
+<body class="bg-zinc-100">
+  <div>
     <div class="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         <span class="block">What should our next party be?</span>
